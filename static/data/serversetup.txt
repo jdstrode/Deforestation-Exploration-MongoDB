@@ -1,0 +1,7 @@
+MongoDB Setup Instructions:
+
+1. Startup MongoDB 
+2. Create new Database named "deforestation_db". 
+	a. Add a collection named "listings" and import "def_area.json" from "Deforestation-Exploration\static\data"
+	b. Add a collection named "mapfiles" "StateTotalDefAndCoordinates.json" from "Deforestation-Exploration\static\data"
+3. Ensure MongoDB open and running while running the flask app "app.py"

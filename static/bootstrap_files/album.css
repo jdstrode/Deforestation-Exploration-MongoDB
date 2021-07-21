@@ -1,0 +1,78 @@
+:root {
+    --jumbotron-padding-y: 3rem;
+  }
+  
+  .jumbotron {
+    padding-top: var(--jumbotron-padding-y);
+    padding-bottom: var(--jumbotron-padding-y);
+    margin-bottom: 0;
+    background-color: white;
+  }
+  @media (min-width: 768px) {
+    .jumbotron {
+      padding-top: calc(var(--jumbotron-padding-y));
+      padding-bottom: calc(var(--jumbotron-padding-y));
+    }
+  }
+  
+  .navbar {
+    height: 75px;
+    background-color: #B3DDF2;
+    text-align: center;
+  }
+  
+  .navbar img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 3%;
+    height: auto;
+  }
+  
+  .jumbotron p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .jumbotron-heading {
+    font-weight: 300;
+  }
+  
+  .jumbotron .container {
+    max-width: 40rem;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    background-color: #B3DDF2;
+  }
+  
+  footer p {
+    margin-bottom: .25rem;
+  }
+  
+  img { 
+    opacity: 0.85; 
+    } 
+    
+  img:hover { 
+    opacity: 1; 
+    }
+  
+  .card {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+  }
+  
+  .btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active {
+    background-color: #B3DDF2;
+    box-shadow: none;
+    color: white;
+    }
+  
+  .box-shadow { box-shadow: 0 .25rem .75rem #B3DDF2; }
