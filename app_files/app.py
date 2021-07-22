@@ -13,8 +13,6 @@ app.config["MONGO_URI"] = "mongodb://localhost:27017/deforestation_db"
 mongo = PyMongo(app)
 
 
-
-
 @app.route("/")
 def welcome():
     """Return Index Page"""

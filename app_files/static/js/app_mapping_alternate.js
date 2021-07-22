@@ -1,11 +1,3 @@
-// let mapdata = d3.select("api/mapdata")
-// console.log(mapdata)
-
-// d3.json("api/mapdata").then(incomingData => {
-//     console.log(incomingData);
-
-// });
-
 
 // Define streetmap layer
 var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -44,29 +36,59 @@ L.control.layers(baseMaps, overlayMaps, {
   collapsed: false
 }).addTo(myMap);
 
+function init() {
+  d3.json("api/mapdata").then((incomingData) => {
+      console.log(incomingData)
+      let yearlyDeforestData = incomingData[0]["2004"];
+      console.log(yearlyDeforestData);
+      let latitudes = incomingData[0].Latitude;
+      console.log(latitudes);
+      let longitudes = incomingData[0].Longitude;
+      console.log(longitudes);
+      let state = incomingData[0].States;
+      console.log(state);
+
+      for (var i = 0; i < longitudes.length-1; i++) {
+
+      let circle = L.circle([latitudes[i],longitudes[i]], {
+        // color: 'red',
+        // fillColor: '#f03',
+        color: circleColor(yearlyDeforestData[i]),
+        fillOpacity: 0.5,
+        radius: yearlyDeforestData[i] * 50
+      // }).addTo(myMap);
+
+  }).bindPopup("<h4> State: " + state[i] + "</h4> <hr> <h5>Deforestation: " + yearlyDeforestData[i] + "</h5>").addTo(deforestation);
+
+  deforestation.addTo(myMap);
+  
+}});
+}
+
+init();
+
+
+
 d3.selectAll("#selDataset").on("change", getData);
 
 function getData() {
+
   let dropdownMenu = d3.select("#selDataset");
   var selector = dropdownMenu.property("value");
 
   console.log(selector)
 
   var data = [];
-  console.log(data)
-
-
+  console.log(data);
+  deforestation.clearLayers();
     d3.json("api/mapdata").then((incomingData) => {
         console.log(incomingData)
-        let yearlyDeforestData = data;
-        console.log(yearlyDeforestData);
         let latitudes = incomingData[0].Latitude;
         console.log(latitudes);
         let longitudes = incomingData[0].Longitude;
         console.log(longitudes);
         let state = incomingData[0].States;
         console.log(state);
-
 
         if (selector == "2004") {
           data = incomingData[0]["2004"];
@@ -123,18 +145,16 @@ function getData() {
         let circle = L.circle([latitudes[i],longitudes[i]], {
           // color: 'red',
           // fillColor: '#f03',
-          color: circleColor(yearlyDeforestData[i]),
+          color: circleColor(data[i]),
           fillOpacity: 0.5,
-          radius: yearlyDeforestData[i] * 50
+          radius: data[i] * 50
         // }).addTo(myMap);
 
-    }).bindPopup("<h4> State: " + state[i] + "</h4> <hr> <h5>Deforestation: " + yearlyDeforestData[i] + "</h5>").addTo(deforestation);
+    }).bindPopup("<h4> State: " + state[i] + "</h4> <hr> <h5>Deforestation: " + data[i] + "</h5>").addTo(deforestation);
 
     deforestation.addTo(myMap);
   }});
 }
-
-
 
   function circleColor(deforest) {
     if (deforest > 2000) {
@@ -148,27 +168,3 @@ function getData() {
     }
     return color; 
 };
-
-// L.circle(countries[i].location, {
-//   fillOpacity: 0.75,
-//   color: "white",
-//   fillColor: color,
-//   // Adjust radius
-//   radius: countries[i].points * 1500
-// }).bindPopup("<h1>" + countries[i].name + "</h1> <hr> <h3>Points: " + countries[i].points + "</h3>").addTo(myMap);
-// }
-
-
-
-
-
-
-// L.geoJSON(data, {
-//   onEachFeature: popUpMsg,
-//   pointToLayer: function(feature, latlng) {
-//       return new L.CircleMarker(latlng, {
-//           color: circleColor(feature.geometry.coordinates[2]),
-//         radius: feature.properties.mag * 7, 
-//         fillOpacity: 0.5
-//       });
-//   },

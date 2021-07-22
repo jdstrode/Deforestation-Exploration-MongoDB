@@ -6,7 +6,6 @@
 
 // });
 
-
 // Define streetmap layer
 var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -44,7 +43,7 @@ L.control.layers(baseMaps, overlayMaps, {
   collapsed: false
 }).addTo(myMap);
 
-
+function init() {
     d3.json("api/mapdata").then((incomingData) => {
         console.log(incomingData)
         let yearlyDeforestData = incomingData[0]["2004"];
@@ -70,6 +69,10 @@ L.control.layers(baseMaps, overlayMaps, {
 
     deforestation.addTo(myMap);
   }});
+}
+
+init();
+
 
 
   function circleColor(deforest) {
@@ -85,26 +88,4 @@ L.control.layers(baseMaps, overlayMaps, {
     return color; 
 };
 
-// L.circle(countries[i].location, {
-//   fillOpacity: 0.75,
-//   color: "white",
-//   fillColor: color,
-//   // Adjust radius
-//   radius: countries[i].points * 1500
-// }).bindPopup("<h1>" + countries[i].name + "</h1> <hr> <h3>Points: " + countries[i].points + "</h3>").addTo(myMap);
-// }
 
-
-
-
-
-
-// L.geoJSON(data, {
-//   onEachFeature: popUpMsg,
-//   pointToLayer: function(feature, latlng) {
-//       return new L.CircleMarker(latlng, {
-//           color: circleColor(feature.geometry.coordinates[2]),
-//         radius: feature.properties.mag * 7, 
-//         fillOpacity: 0.5
-//       });
-//   },
