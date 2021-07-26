@@ -1,53 +1,36 @@
-# Project 2 - Deforestation in the Amazon Rain Forest 
-![rainForest](https://media.giphy.com/media/eGNpmOUeIIYUB4P4Al/giphy.gif)
+# Deforestation in the Amazon Rainforest 
 
-## Developer/Student Commentary: 
-This Repository has been made to summit the project assignment for our Data Science Bootcamp at Northwestern University
+*__NOTE:__ The webpage for this project is only deployable locally.  To view it you will need to clone this repo and setup a MongoDB connection.  Further instructions for initial setup are [here](app_files/static/data/serversetup.txt).*
 
-PROJECT 2
+_**A working version of this website is viewable and deployed to Github pages [here](https://jdstrode.github.io/Deforestation-Exploration-No-DB/).  This version does not utilize an external database.**_
 
+# Developer/Student Commentary
+Within the repository you will find a group project that was originally submitted as part of the certification for the Data Science Bootcamp at Northwestern University.  I have since improved it significantly by adding a landing page, mapping page, and modifying the styling greatly. 
 
-June, 2021
+# Topic and Background
+The exploration of this deforestation dataset was inspired by this [National Geographic Article]( https://www.nationalgeographic.com/environment/article/deforestation#:~:text=Between%201990%20and%202016%2C%20the,study%20in%20the%20journal%20Nature) by Christina Nunez.  
 
-This project was created by:
+Between 1990 and 2016, the world lost 502,000 square miles (1.3 million square kilometers) of the forest. That is equivelant to an area larger than South Africa.   
 
-* Jorge Daniel Atuesta [Github Profile](https://github.com/danielatuesta55)
-* Jhon Cass [Github Profile](https://github.com/cass-john)
-* Jhon Strode [Github Profile](https://github.com/jdstrode)
+The Amazon rainforest was selected for this project as it is the largest rainforest in the world.  The data used covers the time period from 2004-2019, which were critical years in the war against deforestation.  In 2003, the Brazilian government began regulating deforestation.  Initially, illegal deforestation decreased starkly as seen in the chart, however, after 2008 began to rise again in certain regions.  It is noted in the Geographic Article that at this time the government began to lower their gaurd and there is even speculation of crooked politics for profit at play.
 
+# Dataset
+Deforestation Dataset was taken from [Kaggle](https://www.kaggle.com/mbogernetto/brazilian-amazon-rainforest-degradation).
 
-## Chosen topic Amazon Rain Forest Deforestation!
-![Defo](https://media.giphy.com/media/l378zCNZopqr11jt6/giphy.gif)
+# Technical Details
 
-Deforestation, one of humans kind worst attributes. By demolishing our rainforest, we are essentially creating our paths towards extinction. Christina Nunez (2019) mentions that between 1990 and 2016, the world lost 502,000 square miles (1.3 million square kilometers) of the forest. If you think about that number is equivalent to an area larger than South Africa. 
+* This project was built using a Flask app to connect to a MongoDB and deploy an API.  Python was used to program the Flask app and to explore the dataset in Jupyter Lab.  
 
-[Link to the National Geographic article by Christina Nunez]( https://www.nationalgeographic.com/environment/article/deforestation#:~:text=Between%201990%20and%202016%2C%20the,study%20in%20the%20journal%20Nature)
+* HTML, Bootstrap, and CSS were used to make the various webpages.  
 
-The link between deforestation and global warming has been proven over time by multiple studies, scientists, and activists; with that said, deforestation is still happening. For this particular project, we researched the world's biggest rainforest, The Amazon rainforest. Multiples countries share this forest, but the country that has the most land is Brazil. 
+* The interactive charts and maps were developed using JavaScript, Plotly, and Leaflet.js.
 
-![earth](https://media.giphy.com/media/lN9wakZ84b8tn7lUwy/giphy.gif)
+## Sample Map: Deforestation of the Year 2004 
 
-We looked into Brazil to see the history of deforestation and their ongoing attempts to stop it. WE gather data from the year 2004 till the year 2019; critical years in the war against deforestation. It was not until 2003 that the government started to regulate deforestation in the Amazon rainforest firmly. With new implementations came new challenges and the effect this had at the beginning was astonishing. As you can see on our graphs, deforestation went down, but it wasn't until 2008 and, more specifically, 2015 when illegal deforestation started to take a toll on the Amazon Rain forest. With the government possibly lowering their guard on this crucial aspect, multiple agencies saw this as a chance to take a piece of the forest for profit.
+![Mapping Deforestation Yearly for each State](app_files/static/images/map.png)
 
-This project aims to showcase the efficiency of public policies if they are upheld and the need for deforestation to stop. Although we understand that this is one rain forest and one country, we know its impact on our ecosystem. 
-
-With this said, we want to give a massive shoutout to everyone putting in the hours day after day to make this stop. We hear you, and we acknowledge you! 
-
-![save](https://media.giphy.com/media/8wDZGFONZeXi5nBZns/giphy.gif)
-
-## Data sets
-Here are the links to the data sets used for this project:
-
-Deforestation Data set: [Click Here](https://www.kaggle.com/mbogernetto/brazilian-amazon-rainforest-degradation)
+## Sample Plot: Deforestation for AC State from 2004-2019
+![Plotting Deforestation over each Amazon State by Year](app_files/static/images/allstates.png)
 
 
-NOAA Website: https://coralreefwatch.noaa.gov/crtr/data_resources.php
 
-## Inspiration for our data visualizations
-
-Here are some screen shots of diffrent maps that have a strong impact to visualize data.
-
-1. ![inspiration1](Images/1.png)
-2. ![inspiration2](Images/2.png)
-3. ![inspiration3](Images/3.png)
-4. ![inspiration4](Images/4.png)
