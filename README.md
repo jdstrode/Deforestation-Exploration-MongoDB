@@ -1,7 +1,7 @@
 # Deforestation in the Amazon Rainforest 
 
 ## Landing Page Preview
-![Landing Page Preview](static/images/index.png)
+![Landing Page Preview](app_files/static/images/index.png)
 
 *__NOTE:__ The webpage for this project is only deployable locally.  To view it you will need to clone this repo and setup a MongoDB connection.  Further instructions for initial setup are [here](app_files/static/data/serversetup.txt).*
 
@@ -30,11 +30,11 @@ Deforestation Dataset was taken from [Kaggle](https://www.kaggle.com/mbogernetto
 
 ## Plotting Page Preview
 
-![Plotting Page Preview](static/images/plotchart.png)
+![Plotting Page Preview](app_files/static/images/plotchart.png)
 
 ## Mapping Page Preview
 
-![Mapping Page Preview](static/images/plotmap.png)
+![Mapping Page Preview](app_files/static/images/plotmap.png)
 
 ## Sample Map: Deforestation of the Year 2004 
 
